@@ -1,0 +1,50 @@
+resources:
+   - name: u16
+     type: gitRepo
+     repoPath: ranjansingh41/u16
+     configuration:
+        integrationName: github
+        branches:
+           except: "*test"
+           only: "master*"
+        tags:
+           except: none
+           only: none   
+        buildOnCommit: true
+     initialVersion:
+       sha: master
+       
+pipelines:
+  - name: test_pipeline_1
+    setup:
+      environmentVariables:
+        normal:
+          - ENV1: value-pipe-1
+          - ENV2: value-pipe-2
+        encrypted:
+          - SECURE_ENV1: test_value-pipe-1
+          - SECURE_ENV2: test_value-pipe-2
+      runtime: onHost-pipe
+    steps:
+      - name: in_trigger_step
+        type: runSh
+        configuration:
+          affinityGroup: test_group 
+        setup:
+          environmentVariables:
+            normal:
+              - ENV1: value1
+              - ENV2: value2
+            encrypted:
+              - SECURE_ENV1: test_value
+              - SECURE_ENV2: test_value
+          runtime: onHost
+        execution:
+          onExecute:
+            - echo "executing task command 1"
+            - echo "executing task command 2"
+         
+        triggeredBy:
+          resources:
+            - u16
+        
