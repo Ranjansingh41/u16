@@ -19,10 +19,9 @@ pipelines:
       environmentVariables:
         normal:
           - ENV1: value-pipe-1
-          - ENV2: value-pipe-2
-       
-runtime: 
-   type: onHost-pipe
+          - ENV2: value-pipe-2  
+      runtime: 
+        type: host
     steps:
       - name: in_trigger_step
         type: bash
@@ -33,7 +32,8 @@ runtime:
             normal:
               - ENV1: value1
               - ENV2: value2
-          runtime: host
+          runtime:
+            type: host
         execution:
           onExecute:
             - echo "executing task command 1"
