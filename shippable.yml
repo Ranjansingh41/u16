@@ -5,7 +5,7 @@ resources:
      configuration:
         integrationName: github
         branches:
-           only: "master*"
+           only: master
         tags:
            except: none
            only: none   
@@ -20,9 +20,7 @@ pipelines:
         normal:
           - ENV1: value-pipe-1
           - ENV2: value-pipe-2
-        encrypted:
-          - SECURE_ENV1: test_value-pipe-1
-          - SECURE_ENV2: test_value-pipe-2
+       
       runtime: onHost-pipe
     steps:
       - name: in_trigger_step
