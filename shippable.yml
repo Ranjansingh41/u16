@@ -5,7 +5,6 @@ resources:
      configuration:
         integrationName: github
         branches:
-           except: "*test"
            only: "master*"
         tags:
            except: none
@@ -35,10 +34,7 @@ pipelines:
             normal:
               - ENV1: value1
               - ENV2: value2
-            encrypted:
-              - SECURE_ENV1: test_value
-              - SECURE_ENV2: test_value
-          runtime: onHost
+          runtime: host
         execution:
           onExecute:
             - echo "executing task command 1"
