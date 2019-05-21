@@ -27,7 +27,7 @@ mkdir -p /etc/drydock
 echo "================= Installing basic packages ==================="
 apt-get install -y \
   build-essential=12.1* \
-  curl=7.47* \
+  curl \
   gcc=4:5.3* \
   gettext=0.19* \
   htop=2.0* \
