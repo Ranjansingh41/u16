@@ -2,7 +2,7 @@
 
 export DEBIAN_FRONTEND=noninteractive
 
-echo "================ Installing locales ======================="
+echo "================ Installing locales =============================="
 apt-get clean && apt-get update
 apt-get install -q locales=2.23*
 
