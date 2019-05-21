@@ -60,7 +60,7 @@ printf "\n"
 echo "jq --version"
 jq --version
 
-
+ 
 echo "================= JFrog CLI Versions ==================="
 printf "\n"
 echo "jfrog --version"
