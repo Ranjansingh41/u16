@@ -82,7 +82,7 @@ echo "================= Installing Java  =======================================
 echo "================= Installing Ruby  ====================================================="
 . /u16/ruby/install.sh
 
-export CLOUD_SDKREPO=233.0*
+export CLOUD_SDKREPO=245.0*
 echo "================= Adding gcloud $CLOUD_SDK_REPO ========================================"
 CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | tee /etc/apt/sources.list.d/google-cloud-sdk.list
