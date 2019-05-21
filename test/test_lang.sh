@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-echo "======================== OS Information ==================="
+echo "============================= OS Information ==================="
 printf "\n"
 echo "lsb_release -a"
 lsb_release -a
